@@ -5,12 +5,6 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/dist/(.*)",
-      "dest": "/"
-    }
-  ],
   "rewrites" : [
     { "source": "/(.*)", "destination": "/dist/server.js" }
   ]
