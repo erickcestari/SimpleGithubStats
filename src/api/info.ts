@@ -1,6 +1,6 @@
 import Express from "express";
-import fetchData from "./fetchData";
-import { renderCard } from "../scripts/drawCard/card";
+import fetchData from "./fetchData.js";
+import { renderCard } from "../scripts/drawCard/card.js";
 
 export default async (req: Express.Request, res: Express.Response) => {
   const { user, date } = req.query;

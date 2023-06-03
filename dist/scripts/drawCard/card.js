@@ -1,13 +1,10 @@
-import { codingFor, renderLanguages } from "../../utils/utils";
-import dayjs from "dayjs";
-export const renderCard = (info : any) => {
-  const linesCount = Object.keys(info.languagesPercents).length + Object.keys(info).length  + 3
-  const verticalOffset = 3;
-  const lineHeight = 4;
-
-  const height = linesCount * lineHeight + verticalOffset * 2;
-
-  return `
+import { codingFor, renderLanguages } from "../../utils/utils.js";
+export const renderCard = (info) => {
+    const linesCount = Object.keys(info.languagesPercents).length + Object.keys(info).length + 3;
+    const verticalOffset = 3;
+    const lineHeight = 4;
+    const height = linesCount * lineHeight + verticalOffset * 2;
+    return `
   <svg viewBox="0 0 200 ${height}" xmlns="http://www.w3.org/2000/svg">
     <style>
       .container{
@@ -41,3 +38,4 @@ export const renderCard = (info : any) => {
     </text>
   </svg>`;
 };
+//# sourceMappingURL=card.js.map

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { calculateLanguagesPercents } from '../utils/utils';
+import { calculateLanguagesPercents } from '../utils/utils.js';
 const token = process.env.GITHUB_TOKEN
 
 export default async (user: string, date : any) => {
