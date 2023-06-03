@@ -1,6 +1,6 @@
 {
   "name": "githubstats",
-  "version": "1.0.0",
+  "version": "1",
   "description": "",
   "main": "server.ts",
   "engines": {
