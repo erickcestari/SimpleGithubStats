@@ -21,8 +21,8 @@ export const renderLanguages = (languages) => {
         let percentSquares = Math.ceil(languages[i] / 10);
         let squares = '';
         for (let j = 0; j < 10; j++) {
-            const whiteSquare = '◼ ';
-            const blackSquare = '◻ ';
+            const whiteSquare = '■ ';
+            const blackSquare = '□ ';
             percentSquares > Number(j) ? squares += `${whiteSquare}` : squares += `${blackSquare}`;
         }
         languagesArray.push(`<tspan x="4" dy="4">${i.length > 9 ? i : i + '\xa0'.repeat(10 - i.length)}: ${squares} ${languages[i]}%</tspan>`);
