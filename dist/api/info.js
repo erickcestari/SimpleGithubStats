@@ -8,5 +8,8 @@ export default async (req, res) => {
         res.setHeader("Content-Type", "image/svg+xml");
         res.send(renderCard(userInfo));
     }
+    else {
+        res.send({ message: 'Put a valid user in the query string' });
+    }
 };
 //# sourceMappingURL=info.js.map

@@ -12,5 +12,7 @@ export default async (req: Express.Request, res: Express.Response) => {
   if(userInfo){
     res.setHeader("Content-Type", "image/svg+xml");
     res.send(renderCard(userInfo));
+  } else {
+    res.send({message: 'Put a valid user in the query string'})
   }
 }

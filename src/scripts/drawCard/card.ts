@@ -4,7 +4,6 @@ export const renderCard = (info : any) => {
   const linesCount = Object.keys(info.languagesPercents).length + Object.keys(info).length  + 3
   const verticalOffset = 3;
   const lineHeight = 4;
-  
 
   const height = linesCount * lineHeight + verticalOffset * 2;
 
