@@ -1,5 +1,4 @@
 import dayjs from 'dayjs';
-import twemoji from 'twemoji';
 const token = process.env.GITHUB_TOKEN;
 export const calculateLanguagesPercents = (allRepos) => {
     const languagesUsed = {};
@@ -23,9 +22,8 @@ export const renderLanguages = (languages) => {
         let percentSquares = Math.ceil(languages[i] / 10);
         let squares = '';
         for (let j = 0; j < 10; j++) {
-            const blackSquare = twemoji.parse('⬛');
-            const whiteSquare = twemoji.parse('⬜');
-            console.log(blackSquare, whiteSquare);
+            const whiteSquare = '&#x2B1C;';
+            const blackSquare = '&#x2B1B;';
             percentSquares > Number(j) ? squares += `${whiteSquare}` : squares += `${blackSquare}`;
         }
         languagesArray.push(`<tspan x="4" dy="4">${i.length > 9 ? i : i + '\xa0'.repeat(10 - i.length)}: ${squares} ${languages[i]}%</tspan>`);
@@ -35,6 +33,7 @@ export const renderLanguages = (languages) => {
         const B = b.match(/\d+(\.\d+)?%/);
         return (Number(A[0].replace('%', '')) > Number(B[0].replace('%', '')) ? -1 : 1);
     });
+    console.log(languagesArray);
     return languagesArray.reduce((acc, curr) => acc + curr, '');
 };
 export const codingFor = (date) => {
