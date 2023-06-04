@@ -8,7 +8,7 @@ export default async (user: string, date : any) => {
   const stars = (await axios.get(`https://api.github.com/users/${user}/starred`, {headers: {Authorization: `Bearer ${token}`}} )).data;
   const allRepos = (await axios.get(`https://api.github.com/users/${user}/repos`, {headers: {Authorization: `Bearer ${token}`}})).data;
   const pulls = (await axios.get( `https://api.github.com/search/issues?q=author:${user}%20type:pr%20is:merged`, {headers: {Authorization: `Bearer ${token}`}})).data;
-
+  console.log(data.created_at)
   const languagesPercents  = calculateLanguagesPercents(allRepos)
   
   const info = {
@@ -18,7 +18,7 @@ export default async (user: string, date : any) => {
     followers: data.followers,
     codingSince: data.created_at,
     languagesPercents,
-    date
+    date: date || data.created_at,
   }
   return info
 }
