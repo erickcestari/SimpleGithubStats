@@ -3,7 +3,8 @@ export const calculateLanguagesPercents = (allRepos) => {
     const languagesUsed = {};
     allRepos.map((repo) => {
         const repoLang = repo.language;
-        repoLang !== null && (languagesUsed[repoLang] ? languagesUsed[repoLang]++ : (languagesUsed[repoLang] = 1));
+        repoLang !== null ? (languagesUsed[repoLang] ? languagesUsed[repoLang]++ : (languagesUsed[repoLang] = 1))
+            : (languagesUsed['Others'] ? languagesUsed['Others']++ : (languagesUsed['Others'] = 1));
     });
     let sum = 0;
     for (let i in languagesUsed) {
@@ -18,12 +19,12 @@ export const calculateLanguagesPercents = (allRepos) => {
 export const renderLanguages = (languages) => {
     let languagesArray = [];
     for (let i in languages) {
-        let percentSquares = Math.ceil(languages[i] / 10);
+        let percentSquares = Math.ceil(languages[i] / 5);
         let squares = '';
-        for (let j = 0; j < 10; j++) {
-            const whiteSquare = '■ ';
-            const blackSquare = '□ ';
-            percentSquares > Number(j) ? squares += `${whiteSquare}` : squares += `${blackSquare}`;
+        for (let j = 0; j < 20; j++) {
+            const whiteSquare = '▮';
+            const blackSquare = '▯';
+            percentSquares > Number(j) ? squares += `<tspan class="colored-text">${whiteSquare}</tspan>` : squares += `<tspan>${blackSquare}</tspan>`;
         }
         languagesArray.push(`<tspan x="4" dy="4">${i.length > 9 ? i : i + '\xa0'.repeat(10 - i.length)}: ${squares} ${languages[i]}%</tspan>`);
     }

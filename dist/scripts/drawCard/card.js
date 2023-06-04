@@ -1,6 +1,6 @@
 import { codingFor, renderLanguages } from "../../utils/utils.js";
 export const renderCard = (info) => {
-    const linesCount = Object.keys(info.languagesPercents).length + Object.keys(info).length + 3;
+    const linesCount = Object.keys(info.languagesPercents).length + Object.keys(info).length + 2;
     const verticalOffset = 3;
     const lineHeight = 4;
     const height = linesCount * lineHeight + verticalOffset * 2;
@@ -26,12 +26,12 @@ export const renderCard = (info) => {
     
     <text x="4" y="6" class="text">My Github profile Status:
   
-      <tspan x="4" dy="6">Repositories<tspan class="colored-text">: ${info.repos}</tspan>;</tspan>
-      <tspan x="4" dy="4">Prs<tspan class="colored-text">: ${info.prs}</tspan>;</tspan>
-      <tspan x="4" dy="4">Stars<tspan class="colored-text">: ${info.stars}</tspan>;</tspan>
-      <tspan x="4" dy="4">Followers<tspan class="colored-text">: ${info.followers}</tspan>;</tspan>
+      <tspan x="4" dy="6">Number of Repositories<tspan class="colored-text">: ${info.repos}</tspan>;</tspan>
+      <tspan x="4" dy="4">Number of Prs<tspan class="colored-text">: ${info.prs}</tspan>;</tspan>
+      <tspan x="4" dy="4">Number of Stars<tspan class="colored-text">: ${info.stars}</tspan>;</tspan>
+      <tspan x="4" dy="4">Number of Followers<tspan class="colored-text">: ${info.followers}</tspan>;</tspan>
       
-      <tspan x="4" dy="6" class="colored-text">// Languages</tspan>
+      <tspan x="4" dy="6" class="colored-text">// Most used Languages</tspan>
       ${renderLanguages(info.languagesPercents)}
       
       <tspan x="4" dy="8">I'm coding for <tspan class="colored-text">${info.date ? codingFor(info.date) : codingFor(info.codingSince)}</tspan>;</tspan>
