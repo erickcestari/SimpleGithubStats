@@ -13,7 +13,7 @@ export const renderCard = (info) => {
 
       .text {
         font: 2.8px monospace;
-        font-family: Consolas;
+        font-family: Consolas, monospace, Arial, sans-serif;
         fill: #fff;
       }
 

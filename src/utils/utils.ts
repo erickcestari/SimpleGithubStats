@@ -1,5 +1,6 @@
 import axios from 'axios'
 import dayjs from 'dayjs'
+import twemoji from 'twemoji'
 const token = process.env.GITHUB_TOKEN
 
 export const calculateLanguagesPercents =(allRepos: any[]) => {
@@ -30,7 +31,10 @@ export const renderLanguages = (languages : any) => {
     let percentSquares = Math.ceil(languages[i] / 10)
     let squares = ''
     for (let j = 0; j < 10; j++) {
-      percentSquares > Number(j) ? squares += '⬜' : squares+='⬛'
+      const blackSquare = twemoji.parse('⬛')
+      const whiteSquare = twemoji.parse('⬜')
+      console.log(blackSquare, whiteSquare)
+      percentSquares > Number(j) ? squares += `${whiteSquare}` : squares+=`${blackSquare}`
     }
     languagesArray.push(`<tspan x="4" dy="4">${i.length > 9 ? i : i + '\xa0'.repeat(10 - i.length)}: ${squares} ${languages[i]}%</tspan>`) 
   }
