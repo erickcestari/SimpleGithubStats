@@ -27,7 +27,7 @@ export const renderCard = (info : any) => {
 
     <rect class="container" x="0" width="100%" height="100%" rx="2px" ry="2px" stroke-linejoin="round" />
     
-    <text x="4" y="6" class="text">My Github profile Status:
+    <text x="4" y="6" class="text">My Github profile Stats:
   
       <tspan x="4" dy="6">Number of Repositories<tspan class="colored-text">: ${info.repos}</tspan>;</tspan>
       <tspan x="4" dy="4">Number of Prs<tspan class="colored-text">: ${info.prs}</tspan>;</tspan>
