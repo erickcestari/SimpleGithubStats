@@ -34,7 +34,7 @@ export const renderCard = (info : any) => {
       <tspan x="4" dy="4">Number of Stars<tspan class="colored-text">: ${info.stars}</tspan>;</tspan>
       <tspan x="4" dy="4">Number of Followers<tspan class="colored-text">: ${info.followers}</tspan>;</tspan>
       
-      <tspan x="4" dy="6" class="colored-text">// Most used Languages</tspan>
+      <tspan x="4" dy="6" class="colored-text">// Most Used Languages</tspan>
       ${renderLanguages(info.languagesPercents)}
       
       <tspan x="4" dy="8">I'm coding for <tspan class="colored-text">${info.date ? codingFor(info.date) : codingFor(info.codingSince)}</tspan>;</tspan>
